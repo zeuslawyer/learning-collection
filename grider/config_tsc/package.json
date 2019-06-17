@@ -1,0 +1,17 @@
+{
+  "name": "config_tsc",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start:build": "tsc -w",
+    "start:run": "nodemon build/index.js",
+    "dev": "concurrently yarn:start:*"
+  },
+  "dependencies": {
+    "nodemon": "^1.19.1"
+  },
+  "devDependencies": {
+    "concurrently": "^4.1.0"
+  }
+}
