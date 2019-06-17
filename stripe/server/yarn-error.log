@@ -1,0 +1,52 @@
+Arguments: 
+  /Users/zubinpratap/.nvm/versions/node/v10.15.3/bin/node /usr/local/Cellar/yarn/1.16.0/libexec/bin/yarn.js add
+
+PATH: 
+  /Users/zubinpratap/.nvm/versions/node/v10.15.3/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/zubinpratap/.nvm/versions/node/v10.15.3/bin
+
+Yarn version: 
+  1.16.0
+
+Node version: 
+  10.15.3
+
+Platform: 
+  darwin x64
+
+Trace: 
+  SyntaxError: /Users/zubinpratap/Documents/learning/server/package.json: Unexpected token } in JSON at position 571
+      at JSON.parse (<anonymous>)
+      at /usr/local/Cellar/yarn/1.16.0/libexec/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/usr/local/Cellar/yarn/1.16.0/libexec/lib/cli.js:304:30)
+      at /usr/local/Cellar/yarn/1.16.0/libexec/lib/cli.js:315:13
+
+npm manifest: 
+  {
+    "name": "server",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "server": "yarn run build:server",
+      "build:server": "nodemon --watch './**/*.ts' --exec 'ts-node' ./index.ts"
+    },
+    "dependencies": {
+      "@types/body-parser": "^1.17.0",
+      "@types/express": "^4.17.0",
+      "@types/node": "^12.0.8",
+      "@types/stripe": "^6.30.0",
+      "body-parser": "^1.19.0",
+      "express": "^4.17.1",
+      "stripe": "^7.1.0",
+      "ts-node": "^8.2.0",
+      "typescript": "^3.5.1"
+    },
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
