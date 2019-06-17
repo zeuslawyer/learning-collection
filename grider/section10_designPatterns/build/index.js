@@ -1,16 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+var Sorter_1 = require("./Classes/Sorter");
 var Collections_1 = require("./Classes/Collections");
-// const sorter = new BubbleSorter([])
-// console.log(`
-// The original: 
-//   [${sorter.collection}] ...
-// and the sorted:  
-//   [${sorter.getSortedAscending()}]
-// `)
-// console.log(`
-// is sorter an instance of BubbleSorter?
-// ${sorter instanceof BubbleSorter}
-// `);
-var numbers = new Collections_1.NumberCollection([76, 3, -10, -7, 14, 4]);
-console.log("Will this work: \n[" + numbers.getData() + "]", numbers instanceof Collections_1.NumberCollection);
+/* NUMBERCOLLECTION CLASS */
+var numbers = new Collections_1.NumberCollection([10, 2, 4, -55, -3, 29]);
+console.log("Will the getData() parent class method work: \n[" + numbers.getData() + "]", numbers instanceof Collections_1.NumberCollection);
+/* BUBBLESORTER CLASS */
+var sorter = new Sorter_1.BubbleSorter(numbers);
+var sortedNumbers = sorter.getSortedAscending();
+console.log("\nlets see what we can do with the variable 'numbers...\n" + sorter.collection.getData() + ".\nThe sorted numbers are also here: " + sortedNumbers + "\n");

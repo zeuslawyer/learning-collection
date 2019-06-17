@@ -1,18 +1,18 @@
 import {BubbleSorter} from './Classes/Sorter'
 import {NumberCollection} from './Classes/Collections'
 
-// const sorter = new BubbleSorter([])
-// console.log(`
-// The original: 
-//   [${sorter.collection}] ...
-// and the sorted:  
-//   [${sorter.getSortedAscending()}]
-// `)
-// console.log(`
-// is sorter an instance of BubbleSorter?
-// ${sorter instanceof BubbleSorter}
-// `);
 
-let numbers = new NumberCollection([76,3,-10, -7, 14, 4])
-console.log(`Will this work: 
+/* NUMBERCOLLECTION CLASS */
+let numbers = new NumberCollection([10, 2, 4, -55, -3, 29])
+console.log(`Will the getData() parent class method work: 
 [${numbers.getData()}]`, numbers instanceof NumberCollection);
+
+
+/* BUBBLESORTER CLASS */
+let sorter = new BubbleSorter(numbers)
+let sortedNumbers =sorter.getSortedAscending();
+console.log(`
+lets see what we can do with the variable 'numbers...
+${sorter.collection.getData()}.
+The sorted numbers are also here: ${sortedNumbers}
+`)

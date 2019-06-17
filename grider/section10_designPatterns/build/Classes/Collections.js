@@ -18,11 +18,9 @@ var Collection = /** @class */ (function () {
         this.length = collection.length;
         this.data = collection;
     }
-    Collection.prototype.getData = function () {
-        return this.data;
-    };
     return Collection;
 }());
+exports.Collection = Collection;
 var NumberCollection = /** @class */ (function (_super) {
     __extends(NumberCollection, _super);
     function NumberCollection(data) {
@@ -31,6 +29,17 @@ var NumberCollection = /** @class */ (function (_super) {
         _this.data = data;
         return _this;
     }
+    NumberCollection.prototype.compare = function (leftInd, rightInd) {
+        return this.data[leftInd] > this.data[rightInd];
+    };
+    NumberCollection.prototype.swap = function (leftInd, rightInd) {
+        var leftHandVal = this.data[leftInd];
+        this.data[leftInd] = this.data[rightInd];
+        this.data[rightInd] = leftHandVal;
+    };
+    NumberCollection.prototype.getData = function () {
+        return this.data;
+    };
     return NumberCollection;
 }(Collection));
 exports.NumberCollection = NumberCollection;
