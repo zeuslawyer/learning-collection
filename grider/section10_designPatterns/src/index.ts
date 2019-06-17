@@ -25,4 +25,4 @@ class BubbleSorter{
 
 const sorter = new BubbleSorter([10,3,-10, -7, 14, 4])
 console.log(sorter.collection)
-console.log(sorter.getSortedAscending())
+console.log("here it is, sorted:  " ,sorter.getSortedAscending())
