@@ -5,6 +5,8 @@ var BubbleSorter = /** @class */ (function () {
         this.collection = collection;
         this.collection = collection;
     }
+    // this method usesd the Sortable object's own methods to sort
+    // the Sortable object, thus mutating the Sortable object directly
     BubbleSorter.prototype.getSortedAscending = function () {
         var length = this.collection.length;
         for (var i = 0; i < length; i++) {
@@ -13,8 +15,8 @@ var BubbleSorter = /** @class */ (function () {
                     this.collection.swap(j, j + 1);
                 }
             }
+            // console.log(`post sorting colleciton: [${this.collection.data}]`);
         }
-        return this.collection.getData();
     };
     return BubbleSorter;
 }());

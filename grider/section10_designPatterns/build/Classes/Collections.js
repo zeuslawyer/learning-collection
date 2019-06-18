@@ -24,10 +24,7 @@ exports.Collection = Collection;
 var NumberCollection = /** @class */ (function (_super) {
     __extends(NumberCollection, _super);
     function NumberCollection(data) {
-        var _this = _super.call(this, data) || this;
-        _this.data = data;
-        _this.data = data;
-        return _this;
+        return _super.call(this, data) || this;
     }
     NumberCollection.prototype.compare = function (leftInd, rightInd) {
         return this.data[leftInd] > this.data[rightInd];
@@ -43,14 +40,39 @@ var NumberCollection = /** @class */ (function (_super) {
     return NumberCollection;
 }(Collection));
 exports.NumberCollection = NumberCollection;
+var StringCollection = /** @class */ (function (_super) {
+    __extends(StringCollection, _super);
+    function StringCollection(data) {
+        var _this = _super.call(this, data) || this;
+        _this.data = data;
+        return _this;
+    }
+    StringCollection.prototype.compare = function (leftInd, rightInd) {
+        // make everything lower case to sort alphabetically, as upper case as different ASCII value that wont work for sorting alphabetically
+        return this.data[leftInd].toLowerCase() > this.data[rightInd].toLowerCase();
+    };
+    StringCollection.prototype.swap = function (leftInd, rightInd) {
+        // string characters are readable only with sq bracket notation
+        var characters = this.data.split('');
+        var leftHandVal = characters[leftInd];
+        characters[leftInd] = characters[rightInd];
+        characters[rightInd] = leftHandVal;
+        this.data = characters.join('');
+    };
+    return StringCollection;
+}(Collection));
+exports.StringCollection = StringCollection;
 var JSObjectCollection = /** @class */ (function (_super) {
     __extends(JSObjectCollection, _super);
     function JSObjectCollection(data) {
         var _this = _super.call(this, data) || this;
         _this.data = data;
-        _this.data = data;
         return _this;
     }
+    JSObjectCollection.prototype.compare = function () {
+    };
+    JSObjectCollection.prototype.swap = function () {
+    };
     return JSObjectCollection;
 }(Collection));
 exports.JSObjectCollection = JSObjectCollection;

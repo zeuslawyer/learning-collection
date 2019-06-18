@@ -1,12 +1,22 @@
 import {NumberCollection, Collection} from './Collections'
 
+// these are the properties that an object MUST have to be processed by the BubbleSorter class..
+export interface Sortable {
+    length: number,
+    data: any,
+    swap(leftInd: number, rightInd: number) : void,
+    compare(leftInd: number, rightInd: number) : boolean,
+}
+
 export class BubbleSorter{
 
-    constructor(public collection: NumberCollection ){ // REVIEW 
+    constructor(public collection: Sortable ){ // REVIEW 
         this.collection = collection
     }
 
-    getSortedAscending(): NumberCollection {
+    // this method usesd the Sortable object's own methods to sort
+    // the Sortable object, thus mutating the Sortable object directly
+    getSortedAscending(): void {
         const {length} = this.collection
         
         for (let i=0 ; i < length; i++) {
@@ -15,9 +25,7 @@ export class BubbleSorter{
                     this.collection.swap(j, j+1)
                 }
             }
+            // console.log(`post sorting colleciton: [${this.collection.data}]`);
         }
-        return this.collection.getData()
     }
-
-
 }
