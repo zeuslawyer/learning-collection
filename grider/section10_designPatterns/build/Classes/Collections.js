@@ -13,19 +13,21 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-var Collection = /** @class */ (function () {
-    function Collection(collection) {
-        this.length = collection.length;
-        this.data = collection;
-    }
-    return Collection;
-}());
-exports.Collection = Collection;
+var Sorter_1 = require("./Sorter");
 var NumberCollection = /** @class */ (function (_super) {
     __extends(NumberCollection, _super);
     function NumberCollection(data) {
-        return _super.call(this, data) || this;
+        var _this = _super.call(this) || this;
+        _this.data = data;
+        return _this;
     }
+    Object.defineProperty(NumberCollection.prototype, "length", {
+        get: function () {
+            return this.data.length;
+        },
+        enumerable: true,
+        configurable: true
+    });
     NumberCollection.prototype.compare = function (leftInd, rightInd) {
         return this.data[leftInd] > this.data[rightInd];
     };
@@ -38,13 +40,14 @@ var NumberCollection = /** @class */ (function (_super) {
         return this.data;
     };
     return NumberCollection;
-}(Collection));
+}(Sorter_1.BubbleSorter));
 exports.NumberCollection = NumberCollection;
 var StringCollection = /** @class */ (function (_super) {
     __extends(StringCollection, _super);
     function StringCollection(data) {
-        var _this = _super.call(this, data) || this;
+        var _this = _super.call(this) || this;
         _this.data = data;
+        _this.length = data.length;
         return _this;
     }
     StringCollection.prototype.compare = function (leftInd, rightInd) {
@@ -60,19 +63,27 @@ var StringCollection = /** @class */ (function (_super) {
         this.data = characters.join('');
     };
     return StringCollection;
-}(Collection));
+}(Sorter_1.BubbleSorter));
 exports.StringCollection = StringCollection;
 var JSObjectCollection = /** @class */ (function (_super) {
     __extends(JSObjectCollection, _super);
     function JSObjectCollection(data) {
-        var _this = _super.call(this, data) || this;
+        var _this = _super.call(this) || this;
         _this.data = data;
         return _this;
     }
+    Object.defineProperty(JSObjectCollection.prototype, "length", {
+        get: function () {
+            return this.data.length;
+        },
+        enumerable: true,
+        configurable: true
+    });
     JSObjectCollection.prototype.compare = function () {
+        return true; // no implementation right now....
     };
     JSObjectCollection.prototype.swap = function () {
     };
     return JSObjectCollection;
-}(Collection));
+}(Sorter_1.BubbleSorter));
 exports.JSObjectCollection = JSObjectCollection;

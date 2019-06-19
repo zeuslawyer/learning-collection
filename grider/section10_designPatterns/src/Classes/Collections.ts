@@ -1,17 +1,14 @@
-export class Collection {
-    length: number;
-    data: any
+import {BubbleSorter, Sortable} from './Sorter'
 
-    constructor(collection: any){
-        this.length = collection.length
-        this.data = collection
-    }
-}
 
-export class NumberCollection extends Collection {
+export class NumberCollection extends BubbleSorter {
     
-    constructor( data: number[]){
-        super(data)
+    constructor( public data: number[]){
+        super()
+    }
+
+    get length(){
+        return this.data.length
     }
 
     compare(leftInd: number, rightInd: number): boolean {
@@ -29,9 +26,12 @@ export class NumberCollection extends Collection {
     }
 }
 
- export class StringCollection extends Collection{
+ export class StringCollection extends BubbleSorter {
+     length: number;  // alt implementation. does not use getter
+     
      constructor(public data: string){
-        super(data)
+        super()
+        this.length = data.length
      }
 
      compare(leftInd: number, rightInd: number): boolean{
@@ -52,15 +52,18 @@ export class NumberCollection extends Collection {
  }
 
 
-export class JSObjectCollection extends Collection{
+export  class JSObjectCollection extends BubbleSorter{
 
-    constructor( data: object[]){
-        super(data)
-        this.data = data
+    constructor(public data: object[]){
+        super()
+    }
+
+    get length(){
+        return this.data.length
     }
 
     compare(){
-
+        return true  // no implementation right now....
     }
 
     swap(){
