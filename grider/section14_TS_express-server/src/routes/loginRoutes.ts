@@ -1,9 +1,9 @@
 import { Router, Request, Response } from 'express';
 import { Readable } from 'stream';
 
-const router = Router();
+const loginRouter = Router();
 
-router.get('/', (req: Request, res: Response) => {
+loginRouter.get('/', (req: Request, res: Response) => {
   res.send(`
     <div>
         <form method="POST">
@@ -16,7 +16,7 @@ router.get('/', (req: Request, res: Response) => {
     </div>`);
 });
 
-router.get('/:id', (req: Request, res: Response) => {
+loginRouter.get('/:id', (req: Request, res: Response) => {
   res.send(`You've reached the login page....and passed the following
   arguments in your path param:  ${req.params.id}`);
 });
@@ -25,7 +25,7 @@ interface IRequestWithBody extends Request {
   body: { [key: string]: string | undefined };
 }
 
-router.post('/', (req: Request, res: Response) => {
+loginRouter.post('/', (req: Request, res: Response) => {
   const { email, password } = req.body;
   if (email && password && email === 'z@z.com' && password === '123') {
     // ⭐️ set session cookie
@@ -40,4 +40,4 @@ router.post('/', (req: Request, res: Response) => {
   );
 });
 
-export { router };
+export { loginRouter };

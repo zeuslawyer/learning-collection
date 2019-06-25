@@ -1,0 +1,14 @@
+{
+    "env": {
+        "awscloudformation": {
+            "AuthRoleName": "aws-app-sync-env-20190625173516-authRole",
+            "UnauthRoleArn": "arn:aws:iam::010736738943:role/aws-app-sync-env-20190625173516-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::010736738943:role/aws-app-sync-env-20190625173516-authRole",
+            "Region": "ap-southeast-1",
+            "DeploymentBucketName": "aws-app-sync-env-20190625173516-deployment",
+            "UnauthRoleName": "aws-app-sync-env-20190625173516-unauthRole",
+            "StackName": "aws-app-sync-env-20190625173516",
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:010736738943:stack/aws-app-sync-env-20190625173516/c9277bf0-971b-11e9-affa-0200beb62082"
+        }
+    }
+}
