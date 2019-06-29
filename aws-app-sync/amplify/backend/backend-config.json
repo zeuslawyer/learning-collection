@@ -1,6 +1,6 @@
 {
 	"api": {
-		"awsAppSyncTute": {
+		"appsynctute": {
 			"service": "AppSync",
 			"providerPlugin": "awscloudformation",
 			"output": {

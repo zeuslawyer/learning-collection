@@ -1,22 +1,32 @@
 import * as React from 'react';
-import './App.css';
+import { Connect } from 'aws-amplify-react';
+import { graphqlOperation } from 'aws-amplify';
+import { createBlog } from './graphql/mutations';
+import { Form } from './Components/Form';
 
-import logo from './logo.svg';
-
-class App extends React.Component {
-  public render() {
+export default class App extends React.PureComponent {
+  state = {
+    response: '',
+    loading: false
+  };
+  render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.tsx</code> and save to reload.
-        </p>
+      <div style={{ textAlign: 'center' }}>
+        <Connect mutation={graphqlOperation(createBlog)}>
+          {({ mutation }: any) => (
+            <Form
+              onSubmit={async input => {
+                this.setState({ loading: !this.state.loading });
+                const response = await mutation({ input });
+                this.setState({ response }, () =>
+                  this.setState({ loading: !this.state.loading })
+                );
+              }}
+            />
+          )}
+        </Connect>
+        {this.state.loading && <div>...LOADING...</div>}
       </div>
     );
   }
 }
-
-export default App;

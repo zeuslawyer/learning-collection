@@ -4,8 +4,10 @@ import App from './App';
 import './index.css';
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(
-  <App />,
-  document.getElementById('root') as HTMLElement
-);
+import Amplify from '@aws-amplify/core';
+import config from './aws-exports';
+
+Amplify.configure(config);
+
+ReactDOM.render(<App />, document.getElementById('root') as HTMLElement);
 registerServiceWorker();
