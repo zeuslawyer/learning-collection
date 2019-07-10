@@ -40,7 +40,9 @@ class CheckoutForm extends Component<Props, State>{
       body: token.id
     });
   
-    if (response.ok) console.log("Purchase Complete!")
+    if (response.ok) {
+      this.setState({complete: true})
+    }
   }
   
 
@@ -52,7 +54,7 @@ class CheckoutForm extends Component<Props, State>{
         <p>Would you like to complete the purchase?</p>
         <CardElement />
         <button onClick={this.submit}>Send</button>
-        <button onClick ={this.testRoute }style ={{backgroundColor: "green"}}>HIT ME</button>
+        <button onClick ={this.testRoute } style ={{backgroundColor: "green"}}>HIT ME</button>
       </div>
     );
   }
