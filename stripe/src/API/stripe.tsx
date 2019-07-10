@@ -1,8 +1,8 @@
 import Stripe from 'stripe';
 import secrets from '../secrets/secrets'
 
-
-const stripe = new Stripe(secrets.STRIPE_SECRET_KEY)
+const TEST_KEY = 'sk_test_wsxCfHvpkHLwIWMHuLkkSVTL00ikoeYopP'
+const stripe = new Stripe(TEST_KEY)
 
 
 

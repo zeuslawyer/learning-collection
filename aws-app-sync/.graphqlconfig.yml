@@ -1,0 +1,12 @@
+projects:
+  appsynctute:
+    schemaPath: src/graphql/schema.json
+    includes:
+      - src/graphql/**/*.ts
+    excludes:
+      - ./amplify/**
+    extensions:
+      amplify:
+        codeGenTarget: typescript
+        generatedFileName: src/GQLAPI.ts
+        docsFilePath: src/graphql

@@ -1,0 +1,14 @@
+{
+    "tutorial": {
+        "awscloudformation": {
+            "AuthRoleName": "appsynctute-tutorial-20190629112522-authRole",
+            "UnauthRoleArn": "arn:aws:iam::010736738943:role/appsynctute-tutorial-20190629112522-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::010736738943:role/appsynctute-tutorial-20190629112522-authRole",
+            "Region": "ap-southeast-1",
+            "DeploymentBucketName": "appsynctute-tutorial-20190629112522-deployment",
+            "UnauthRoleName": "appsynctute-tutorial-20190629112522-unauthRole",
+            "StackName": "appsynctute-tutorial-20190629112522",
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:010736738943:stack/appsynctute-tutorial-20190629112522/c5064bc0-9a0c-11e9-b806-064b1a6199c8"
+        }
+    }
+}
