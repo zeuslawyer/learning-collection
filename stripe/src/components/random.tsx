@@ -1,15 +1,15 @@
 import React from 'react'
 
 interface Props {
-    greeting: string
+    sectionName: string
 }
 
-function random(props:Props) {
+function SectionDivider(props:Props) {
     return (
-        <div style={{background: "blue"}}>
-            Hey there, {props.greeting}
+        <div style={{background: "yellow"}}>
+            Hey there, {props.sectionName}
         </div>
     )
 }
 
-export default random
+export default SectionDivider
