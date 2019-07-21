@@ -7,7 +7,7 @@ const GlobalStyle = createGlobalStyle`
 
 body {
   font-size: 20px;
-  font-family: 'Hind', sans-serif
+  font-family: 'Hind', sans-serif;
 }
 `;
 

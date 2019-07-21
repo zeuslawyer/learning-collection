@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const StyledPlayer = styled.div`
   background: ${props => props.theme.bgcolor}; /* #353535; */

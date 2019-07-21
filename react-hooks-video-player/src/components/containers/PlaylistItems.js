@@ -1,9 +1,27 @@
-import React from 'react'
-import PlaylistItem from '../PlaylistItem'
-  
+import React from 'react';
+import PlaylistItem from '../PlaylistItem';
+import StyledPlayListItems from '../styles/StyledPlaylistitems';
+import withLink from '../hoc/withLink'
 
-function PlaylistItems() {
-  return <PlaylistItem />
+const PlayListItemWithHOC = withLink(PlaylistItem)
+
+function PlaylistItems({ videos, active }) {
+  return (
+    <StyledPlayListItems> 
+      {
+        videos.map((video)=>(
+
+            <PlayListItemWithHOC 
+            key={video.id} 
+            video={video} 
+            active={active.id===video.id ? true : false} 
+            played={video.played} 
+            />
+          )
+        )
+      }
+    </StyledPlayListItems>
+  );
 }
 
-export default PlaylistItems
+export default PlaylistItems;
