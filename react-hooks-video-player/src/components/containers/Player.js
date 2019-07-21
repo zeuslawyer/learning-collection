@@ -13,7 +13,8 @@ const themeDark = {
   bgcolorPlayed: '#526d4e',
   border: 'none',
   borderPlayed: 'none',
-  color: '#fff'
+  color: '#fff',
+  urlColor: 'white'
 };
 
 const themeLight = {
@@ -23,19 +24,25 @@ const themeLight = {
   bgcolorPlayed: '#7d9979',
   border: '1px solid #353535 ',
   borderPlayed: 'none',
-  color: '#353535'
+  color: '#353535',
+  visitedUrlCol: 'purple'
 };
 
 const Player = ({ history, location, match }) => {
-
-  const localStorageState = JSON.parse(window.localStorage.getItem( `${videos.playlistId}`))
+  const localStorageState = JSON.parse(
+    window.localStorage.getItem(`${videos.playlistId}`)
+  );
 
   const [state, setState] = useState({
     nightMode: localStorageState ? localStorageState.nightMode : false,
     videos: localStorageState ? localStorageState.videos : videos.playlist,
-    activeVideo: localStorageState ? localStorageState.activeVideo : videos.playlist[0],
-    playlistId: localStorageState ? localStorageState.playlistId : videos.playlistId,
-    autoPlay:  localStorageState ? localStorageState.autoPlay : false
+    activeVideo: localStorageState
+      ? localStorageState.activeVideo
+      : videos.playlist[0],
+    playlistId: localStorageState
+      ? localStorageState.playlistId
+      : videos.playlistId,
+    autoPlay: localStorageState ? localStorageState.autoPlay : false
   });
 
   const activeTheme = state.nightMode ? themeDark : themeLight;
@@ -62,29 +69,26 @@ const Player = ({ history, location, match }) => {
       autoplay: true
     });
   };
-  const progressCallback = (event) => {
-    if(event.playedSeconds > 10 && event.playedSeconds < 11 ) {
+  const progressCallback = event => {
+    if (event.playedSeconds > 10 && event.playedSeconds < 11) {
       let videos = [...state.videos];
-      const playedVideo = videos.find(vid=>vid.id===state.activeVideo.id)
+      const playedVideo = videos.find(vid => vid.id === state.activeVideo.id);
       playedVideo.played = true;
-      console.log('progress:  ', playedVideo)
+      console.log('progress:  ', playedVideo);
 
-      setState(prev=>{
+      setState(prev => {
         return {
           ...prev,
           videos
-        }
-      })
+        };
+      });
     }
   };
 
-
   // USE LOCAL STORAGE FOR MAINTAINING STATE
   useEffect(() => {
-    localStorage.setItem(`${state.playlistId}`, JSON.stringify({...state}))
-
-    
-  }, [ state ])
+    localStorage.setItem(`${state.playlistId}`, JSON.stringify({ ...state }));
+  }, [state]);
   // HANDLE URL VIDEO ID CHANGES
   useEffect(() => {
     // check if url has an active video id

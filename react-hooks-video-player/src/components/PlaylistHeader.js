@@ -11,7 +11,6 @@ function PlaylistHeader({ active, total }) {
           {active.num} / {total}
         </p>
       </StyledJourney>
-      PlayList Header!
     </StyledPlaylistHeader>
   );
 }

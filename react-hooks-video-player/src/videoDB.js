@@ -9,6 +9,4 @@ const db = `{"playlistId":"wbn_rdx","playlist":[{"num":1,"title":"Introduction a
 {"num":9,"title":"BONUS - Higher order functions","id":"L89dt9sHNJ0","duration":"06:09","video":"https://www.youtube.com/embed/L89dt9sHNJ0"}
 ]}`;
 
-console.log(JSON.parse(db))
-
 export default JSON.parse(db);

@@ -1,7 +1,7 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const StyledNightmode = styled.div`
-  font-family: "Hind", sans-serif;
+  font-family: 'Hind', sans-serif;
   font-weight: 800;
   font-size: 1.6em;
   color: ${props => props.theme.color};
@@ -13,6 +13,7 @@ const StyledNightmode = styled.div`
   .switch {
     position: relative;
     display: inline-block;
+    margin-left: 10px;
     width: 40px;
     height: 24px;
   }
@@ -39,7 +40,7 @@ const StyledNightmode = styled.div`
 
   .slider:before {
     position: absolute;
-    content: "";
+    content: '';
     height: 16px;
     width: 16px;
     left: 4px;
