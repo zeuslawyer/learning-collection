@@ -7,6 +7,8 @@ const db = `{"playlistId":"wbn_rdx","playlist":[{"num":1,"title":"Introduction a
 {"num":7,"title":"Completing the App","id":"XMmSM0TqQ2k","duration":"16:33","video":"https://www.youtube.com/embed/XMmSM0TqQ2k"},
 {"num":8,"title":"BONUS - Persist the state in sessionStorage","id":"r5fLW4PUrSQ","duration":"10:06","video":"https://www.youtube.com/embed/r5fLW4PUrSQ"},
 {"num":9,"title":"BONUS - Higher order functions","id":"L89dt9sHNJ0","duration":"06:09","video":"https://www.youtube.com/embed/L89dt9sHNJ0"}
-]}`
+]}`;
 
-export default JSON.parse(db)
+console.log(JSON.parse(db))
+
+export default JSON.parse(db);

@@ -8,7 +8,7 @@ function Nightmode({ nightMode, nightmodeCallback }) {
       <label className='switch'>
         <input
           type='checkbox'
-          checked={nightMode}
+          defaultChecked={nightMode}
           onClick={nightmodeCallback}
         />
         <span className='slider round' />
