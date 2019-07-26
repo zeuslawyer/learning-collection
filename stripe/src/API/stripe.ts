@@ -11,5 +11,9 @@ export const prod = async () => {
     name: 'My sample product #1',
     type: 'service',
   });
+  console.log(`new product:  
+    ${product}
+  `)
   return product
 };
+
