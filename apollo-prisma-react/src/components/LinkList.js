@@ -18,13 +18,12 @@ const FEED_QUERY = gql`
   }
 `;
 
-function LinkList() {
+const LinkList = props => {
   const renderList = ({ loading, error, data }) => {
     if (loading) return <div>Fetching</div>;
     if (error) return <div>Error</div>;
 
-    const linksToRender = data.feed.links;
-
+    const linksToRender = data.feed.links; // 'feed' is the root query in the FEED_QUERY object. links is the 'payload'
     return (
       <div>
         {linksToRender.map(link => (
@@ -32,10 +31,13 @@ function LinkList() {
         ))}
       </div>
     );
-  }
+  };
+
   return (
-    <Query query={FEED_QUERY} render={renderList} />
+    <Query query={FEED_QUERY}>
+      {queryRespData => renderList(queryRespData)}
+    </Query>
   );
-}
+};
 
 export default LinkList;

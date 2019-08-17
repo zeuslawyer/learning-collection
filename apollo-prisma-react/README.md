@@ -75,7 +75,7 @@ Here's a quick rundown of the most important commands:
 
   - **prisma.yml** : is the root configuration file for your Prisma project.
 
-  - **datamodel.prisma**: 👉 _the DB Data Schema_. It defines your data model in the GraphQL Schema Definition Language (SDL). When using Prisma, the datamodel is used to describe the database schema.
+  - **datamodel.prisma**: 👉 _the DB Data Schema_. It defines your data model in the GraphQL Schema Definition Language (SDL). When using Prisma, the datamodel is used to describe the database schema. **IMPORTANT:** Prisma uses this file to generate the tables in the database.
 
 - **src**: This directory holds the source files for your GraphQL server.
 
