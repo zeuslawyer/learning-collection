@@ -2,7 +2,9 @@
 
 ### Technologies
 
-....
+- `graphql-yoga` : GraphQL Server (`localhost: 4000`)
+- `prisma` : open source API wrapper (ORM-like) to interface with a database. "connects/converts" a database to a graphQL API. (`localhost: 4466`)
+  ....
 
 ### Absolute import config:...
 
