@@ -12,7 +12,7 @@
     "@types/react-stripe-elements": "^1.1.10",
     "@types/stripe": "^6.30.8",
     "body-parser": "^1.19.0",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.1",
